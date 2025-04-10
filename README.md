@@ -1,73 +1,66 @@
-# Nuxt Layer Starter
+# Nuxt Volt Layer
 
-Create Nuxt extendable layer with this GitHub template.
+A ready-to-use Nuxt Layer powered by [Volt by PrimeVue](https://volt.primevue.org/). Preconfigured with everything you need to start building beautiful UI components using Volt + Tailwind CSS — just extend and go!
 
-## Setup
+## 🚀 Quick Start
 
-Make sure to install the dependencies:
+### Recommended (with full control)
+1. Clone layer into your Nuxt project using [degit](https://github.com/Rich-Harris/degit):
 
-```bash
-pnpm install
-```
+   ```shell
+   degit https://github.com/almsomnia/nuxt-volt.git your-layer
+   ```
 
-## Working on your layer
+2. Add layer to your `nuxt.config.ts`:
+   ```ts
+   export default defineNuxtConfig({
+      extends: [
+         'path-to-your-layer'
+      ]
+   })
+   ```
 
-Your layer is at the root of this repository, it is exactly like a regular Nuxt project, except you can publish it on NPM.
+### Or directly extends repository
 
-The `.playground` directory should help you on trying your layer during development.
-
-Running `pnpm dev` will prepare and boot `.playground` directory, which imports your layer itself.
-
-## Distributing your layer
-
-Your Nuxt layer is shaped exactly the same as any other Nuxt project, except you can publish it on NPM.
-
-To do so, you only have to check if `files` in `package.json` are valid, then run:
-
-```bash
-npm publish --access public
-```
-
-Once done, your users will only have to run:
-
-```bash
-npm install --save your-layer
-```
-
-Then add the dependency to their `extends` in `nuxt.config`:
-
+Extend the layer directly from repository in your Nuxt project:
 ```ts
-defineNuxtConfig({
-  extends: 'your-layer'
+export default defineNuxtConfig({
+   extends: [
+      'github:almsomnia/nuxt-volt'
+   ]
 })
 ```
 
-## Development Server
+> **Note**: You will have less control over customizations with this method — `degit` is recommended if you want to tweak the config or add custom utilities.
 
-Start the development server on http://localhost:3000
+## ⚙️ Features
 
-```bash
-pnpm dev
+- Preconfigured Volt by PrimeVue with TailwindCSS v4
+- Utility-first styling with full component ownership
+- Works out of the box with Nuxt 3
+- Custom component scaffolding via CLI
+- Layer structure optimized for modularity
+
+## 🛠 Create a Component
+
+To scaffold a new Volt component:
+
+```shell
+pnpm --filter=your-layer volt:add component-name
 ```
 
-## Production
+## 📦 Built With
 
-Build the application for production:
+- [Nuxt 3](https://nuxt.com)
+- [Volt](https://volt.primevue.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [pnpm](https://pnpm.io/)
 
-```bash
-pnpm build
-```
+## 🙌 Contributing
 
-Or statically generate it with:
+Want to improve or extend the layer? PRs and ideas are always welcome!
 
-```bash
-pnpm generate
-```
+## 📄 License
 
-Locally preview production build:
-
-```bash
-pnpm preview
-```
-
-Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+MIT
