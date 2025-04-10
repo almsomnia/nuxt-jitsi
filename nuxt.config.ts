@@ -11,4 +11,15 @@ export default defineNuxtConfig({
    vite: {
       plugins: [tailwindcss()],
    },
+   components: [
+      {
+         path: join(currentDir, "./src/volt"),
+         pathPrefix: false,
+         extensions: [".vue"],
+      },
+      {
+         path: join(currentDir, "./components"),
+         pathPrefix: false,
+      },
+   ],
 })
